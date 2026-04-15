@@ -19,6 +19,10 @@
 /storage/*.key
 /storage/pail
 /vendor
+<<<<<<< HEAD
+=======
+_ide_helper.php
+>>>>>>> 120b386cfc5f59aa58be5cfd47c3070a5cee1c31
 Homestead.json
 Homestead.yaml
 Thumbs.db

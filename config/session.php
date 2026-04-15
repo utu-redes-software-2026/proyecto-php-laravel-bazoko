@@ -214,4 +214,23 @@ return [
 
     'partitioned' => env('SESSION_PARTITIONED_COOKIE', false),
 
+<<<<<<< HEAD
+=======
+    /*
+    |--------------------------------------------------------------------------
+    | Session Serialization
+    |--------------------------------------------------------------------------
+    |
+    | This value controls the serialization strategy for session data, which
+    | is JSON by default. Setting this to "php" allows the storage of PHP
+    | objects in the session but can make an application vulnerable to
+    | "gadget chain" serialization attacks if the APP_KEY is leaked.
+    |
+    | Supported: "json", "php"
+    |
+    */
+
+    'serialization' => 'json',
+
+>>>>>>> 120b386cfc5f59aa58be5cfd47c3070a5cee1c31
 ];
