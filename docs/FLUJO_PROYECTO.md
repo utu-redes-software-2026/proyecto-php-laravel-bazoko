@@ -1,0 +1,81 @@
+# Flujo general del proyecto
+
+## Objetivo del sistema
+
+Permitir el ingreso y consulta de datos mediante formularios web hechos con Laravel MVC.
+
+## Flujo de autenticacion
+
+1. El usuario entra a `/login`.
+2. Completa email y contrasena.
+3. `AuthController@login` valida los datos.
+4. Laravel inicia la sesion.
+5. El usuario es redirigido a `/`.
+6. La navegacion se adapta al rol del usuario.
+
+Usuarios de prueba:
+
+- `admin@example.com` / `password`
+- `carga@example.com` / `password`
+- `consulta@example.com` / `password`
+
+## Flujo de carga de datos
+
+1. El usuario con rol `admin` o `carga` entra a un formulario.
+2. Laravel muestra la vista Blade correspondiente.
+3. El usuario completa los datos.
+4. El formulario envia una solicitud `POST`.
+5. La ruta envia la solicitud al controlador.
+6. El controlador valida los datos.
+7. El modelo guarda el registro en la base de datos.
+8. El sistema redirige al listado.
+
+## Flujo interno MVC
+
+```txt
+Usuario
+Vista Blade
+Ruta
+Controlador
+Modelo
+Base de datos
+Modelo
+Controlador
+Vista Blade
+Usuario
+```
+
+## Flujo por roles
+
+### Admin
+
+Puede:
+
+- Ver datos.
+- Crear datos.
+- Acceder a todos los modulos actuales.
+
+### Carga
+
+Puede:
+
+- Ver datos.
+- Crear mediciones.
+- Crear inspecciones.
+
+No puede:
+
+- Administrar usuarios.
+
+### Consulta
+
+Puede:
+
+- Ver mediciones.
+- Ver inspecciones.
+
+No puede:
+
+- Crear registros.
+- Editar registros.
+- Eliminar registros.
